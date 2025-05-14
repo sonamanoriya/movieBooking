@@ -107,3 +107,9 @@ div#confirmationMessage {
 section.steps_wrpr h3 {
     text-align: center;
 }
+.movie-card[data-selected="true"] {
+  border: 2px solid #007bff;
+  box-shadow: 0 0 15px rgb(252, 253, 253, 0.5);
+  transform: scale(1.02);
+  transition: all 0.3s ease-in-out;
+}
