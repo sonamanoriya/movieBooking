@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Booking</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Step 1: Movie Selection -->
+  <section id="step1" class="steps_wrpr">
+    <div class="narrow_container">
+        <h2 class="h2">Book Your Movie Ticket</h2>
+        <p class="p">Choose a movie and book your ticket online.</p>
+    <div class="movie-grid">
+      <div class="movie-card" data-id="1" data-name="Inception" data-price="200" data-theater="PVR">
+        <img src="images/inception.jpg" alt="Inception">
+        <h3>Inception</h3>
+        <p>Theater: PVR</p>
+        <p>Price: ₹200</p>
+      </div>
+      <div class="movie-card" data-id="2" data-name="Avengers" data-price="250" data-theater="INOX">
+        <img src="images/avengers.jpg" alt="Avengers">
+        <h3>Avengers</h3>
+        <p>Theater: INOX</p>
+        <p>Price: ₹250</p>
+      </div>
+      <div class="movie-card" data-id="3" data-name="Anaconda" data-price="250" data-theater="PVR">
+        <img src="images/anaconda.jpg" alt="Anaconda">
+        <h3>Anaconda</h3>
+        <p>Theater: INOX</p>
+        <p>Price: ₹250</p>
+      </div>
+      <div class="movie-card" data-id="4" data-name="dark" data-price="250" data-theater="INOX">
+        <img src="images/dark.webp" alt="dark">
+        <h3>Dark</h3>
+        <p>Theater: INOX</p>
+        <p>Price: ₹250</p>
+      </div>
+      <div class="movie-card" data-id="5" data-name="spider" data-price="250" data-theater="PVR">
+        <img src="images/spider.webp" alt="spider">
+        <h3>Spider Man</h3>
+        <p>Theater: INOX</p>
+        <p>Price: ₹250</p>
+      </div>
+      <div class="movie-card" data-id="6" data-name="inthedark" data-price="250" data-theater="INOX">
+        <img src="images/inthedark.webp" alt="inthedark">
+        <h3>In The Dark</h3>
+        <p>Theater: INOX</p>
+        <p>Price: ₹250</p>
+      </div>
+    </div>
+
+
+    <div class="step_btns">
+        <button class="next-btn" id="nextBtn" disabled>Next</button>
+    </div>
+
+    </div>  
+  </section>
+
+    <!-- Step 2: Seat Selection -->
+    <section id="step2" style="display:none;" class="steps_wrpr">
+      <!-- This div will show movie data from localStorage -->
+       <h3>Movie Details</h3>
+      <div id="movieDetails" class="movie-summary">
+
+      </div> 
+        <div class="narrow_container">
+            <h2 class="h2">Select Your Seat</h1>
+            <div class="seat-section">
+                <h3>Front</h3>
+                <button class="seat-btn">F1</button>
+                <button class="seat-btn">F2</button>
+                <button class="seat-btn">F3</button>
+                <button class="seat-btn">F4</button>
+                <button class="seat-btn">F5</button>
+                <button class="seat-btn">F6</button>
+                <button class="seat-btn">F7</button>
+                <button class="seat-btn">F8</button>
+                <button class="seat-btn">F9</button>
+                <button class="seat-btn">F10</button>
+                <button class="seat-btn">F11</button>
+                <button class="seat-btn">F12</button>
+
+                <h3>Middle</h3>
+                <button class="seat-btn">M1</button>
+                <button class="seat-btn">M2</button>
+                <button class="seat-btn">M3</button>
+                <button class="seat-btn">M4</button>
+                <button class="seat-btn">M5</button>
+                <button class="seat-btn">M6</button>
+                <button class="seat-btn">M7</button>
+                <button class="seat-btn">M8</button>
+                <button class="seat-btn">M9</button>
+                <button class="seat-btn">M10</button>
+                <button class="seat-btn">M11</button>
+
+                <h3>Back</h3>
+                <button class="seat-btn">B1</button>
+                <button class="seat-btn">B2</button>
+                <button class="seat-btn">B3</button>
+                <button class="seat-btn">B4</button>
+                <button class="seat-btn">B5</button>
+                <button class="seat-btn">B6</button>
+                <button class="seat-btn">B7</button>
+                <button class="seat-btn">B8</button>
+                <button class="seat-btn">B9</button>
+                <button class="seat-btn">B10</button>
+                <button class="seat-btn">B11</button>
+                <button class="seat-btn">B12</button>
+            </div>
+            <div class="movie_timing">
+                <h3>Movie Timing</h3>
+                <label for="timing">Select Time:</label>
+                <select id="timing">
+                    <option value="10:00 AM">10:00 AM</option>
+                    <option value="1:00 PM">1:00 PM</option>
+                    <option value="4:00 PM">4:00 PM</option>
+                    <option value="7:00 PM">7:00 PM</option>
+                </select>
+            </div>
+
+            </div>
+            <div class="step_btns">
+                <button id="nextToPayment" class="next-btn" disabled>Next</button>
+            </div>
+        </div>
+    </section>
+    <!-- Step 3: Payment -->
+    <section id="step3" class="steps_wrpr" style="display: none;">
+        <h3>Movie Details</h3>
+        <div id="bookingSummary" class="movie-summary">
+          
+        </div> 
+        <div class="narrow_container" id="payment_section">
+            <h2 class="h2">Payment</h2>
+            <div id="payment-summary">
+            <!-- Populated from cookies -->
+            </div>
+        
+            <h3>Select Payment Method</h3>
+            <div class="payment-options">
+            <label><input type="radio" name="payment" value="UPI"> UPI</label><br>
+            <label><input type="radio" name="payment" value="Credit Card"> Credit Card</label><br>
+            <label><input type="radio" name="payment" value="Debit Card"> Debit Card</label><br>
+            <label><input type="radio" name="payment" value="Net Banking"> Net Banking</label><br>
+            <label><input type="radio" name="payment" value="Cash on Counter"> Cash on Counter</label><br>
+            </div>
+            <div class="step_btns">
+                <button id="confirmBooking" class="next-btn" disabled>Confirm Booking</button>
+            </div>
+        </div>
+    </section>
+    <section id="confirmation" class="steps_wrpr" style="display: none;">
+      <div class="narrow_container">
+          <h2 class="h2">Booking Confirmation</h2>
+          <div id="confirmationMessage" class="movie-summary"></div>
+          <div class="step_btns">
+            <button id="backToHome" class="next-btn">Back to Home</button>
+          </div>
+      </div>
+    </section>
+ <script src="script.js"></script>
+</body>
+</html>
